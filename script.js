@@ -8,10 +8,9 @@ const delay = (ms) => {
 
 let logger = (time) => console.log(`Resolved after ${time}ms`);
 
-// Вызовы функции для проверки
-delay(2000).then(logger); // Resolved after 2000ms
-delay(1000).then(logger); // Resolved after 1000ms
-delay(1500).then(logger); // Resolved after 1500ms
+delay(2000).then(logger);
+delay(1000).then(logger);
+delay(1500).then(logger);
 
 const users = [
   { name: "Mango", active: true },
@@ -71,16 +70,6 @@ const logError = (id) => {
   console.warn(`Error processing transaction ${id}. Please try again later.`);
 };
 
-/*
- * Работает так
- */
-// makeTransaction({ id: 70, amount: 150 }, logSuccess, logError);
-// makeTransaction({ id: 71, amount: 230 }, logSuccess, logError);
-// makeTransaction({ id: 72, amount: 75 }, logSuccess, logError);
-// makeTransaction({ id: 73, amount: 100 }, logSuccess, logError);
-/*
- * Должно работать так
- */
 makeTransaction({ id: 70, amount: 150 }).then(logSuccess).catch(logError);
 
 makeTransaction({ id: 71, amount: 230 }).then(logSuccess).catch(logError);
